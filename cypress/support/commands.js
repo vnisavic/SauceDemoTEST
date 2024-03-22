@@ -24,3 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 /// <reference types="Cypress"/>
+
+Cypress.Commands.add('logIn', (url, username, pass)=>{
+     cy.visit(url)
+     cy.get('[data-test="username"]').type(username)
+     cy.get('[data-test="password"]').type(pass)
+     cy.get('#login-button').click()
+})
+
+Cypress.Commands.add('isVisible',(element)=>{
+
+     element.should('be.visible').and('exist')
+     
+})
