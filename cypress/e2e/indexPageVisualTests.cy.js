@@ -60,6 +60,16 @@ describe('Index page visual tests with standard user', ()=>{
 
     })
 
+    it('Is products header visible', ()=>{
+    
+        cy.get(index.productsHeader).should('be.visible').and('exist')
 
+    })
+
+    it('Is filter icon visible', ()=>{
+    
+        cy.get(index.filterIcon).should('be.visible').and('exist')
+
+    })
 
 })

@@ -10,5 +10,9 @@ class Index{
     onesieImg = '#item_2_img_link > .inventory_item_img'
     redShirtImg = '#item_3_img_link > .inventory_item_img'
 
+    productsHeader = '.product_label'
+    filterIcon = '.product_sort_container'
+
+
 }
 export default Index
