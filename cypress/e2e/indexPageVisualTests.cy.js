@@ -1,4 +1,5 @@
 import Index from "../pageObjectModels/indexPOM"
+var index = new Index()
 
 describe('Index page visual tests with standard user', ()=>{
 
@@ -6,66 +7,56 @@ describe('Index page visual tests with standard user', ()=>{
     let pass = "secret_sauce"
     let url = "https://www.saucedemo.com/v1/"
     
-
     beforeEach('Log In', ()=>{
         cy.logIn(url, user,pass)
     })
 
-
     it('Is header logo visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.swagLogo)
+        cy.get(index.swagLogo).should('be.visible').and('exist')
 
     })
 
     it('Is peek robot visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.peekRobot)
+        cy.get(index.peekRobot).should('be.visible').and('exist')
 
     })
 
     it('Is backpack image visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.backPackImG)
+        cy.get(index.backPackImG).should('be.visible').and('exist')
 
     })
 
     it('Is bike light image visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.bikeLightImg)
+        cy.get(index.bikeLightImg).should('be.visible').and('exist')
 
     })
 
     it('Is T-SHIRT image visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.tShirtImg)
+        cy.get(index.tShirtImg).should('be.visible').and('exist')
 
     })
 
     
     it('Is jacket image visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.jacketImg)
+        cy.get(index.jacketImg).should('be.visible').and('exist')
 
     })
 
     it('Is onesie image visible', ()=>{
         
-        const index = new Index()
-        cy.isVisible(index.onesieImg)
+        cy.get(index.onesieImg).should('be.visible').and('exist')
 
     })
 
     it('Is red shirt image visible', ()=>{
-        
-        const index = new Index()
-        cy.isVisible(index.redShirtImg)
+    
+        cy.get(index.redShirtImg).should('be.visible').and('exist')
 
     })
 
