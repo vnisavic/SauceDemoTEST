@@ -23,6 +23,12 @@ class Login{
         this.loginBtn.click()
 
     }
+
+    checkVisibility(element){
+
+        element.should('be.visible').and('exist')
+        
+    }
     
 }
 export default Login;
