@@ -1,6 +1,5 @@
 import Index from "../pageObjectModels/indexPOM"
 
-
 describe('Index page visual tests with standard user', ()=>{
 
     let user = "standard_user"
@@ -70,6 +69,6 @@ describe('Index page visual tests with standard user', ()=>{
 
     })
 
-    
+
 
 })
