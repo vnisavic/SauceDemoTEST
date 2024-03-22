@@ -228,7 +228,7 @@ describe('Index page visual tests with standard user', ()=>{
         
     })
 
-    it('Is onesie add to cart button visible', ()=>{
+    it.only('Is onesie add to cart button visible', ()=>{
 
         cy.get(index.cartBtnFive).should('be.visible').and('exist')
         

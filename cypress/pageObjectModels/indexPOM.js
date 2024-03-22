@@ -49,6 +49,13 @@ class Index{
 
     footerText = '.footer_copy'
 
+    bikeLightItemName = '#item_0_title_link > .inventory_item_name'
+    backPackItemName = '#item_4_title_link > .inventory_item_name'
+    tShirtItemName = '#item_1_title_link > .inventory_item_name'
+    jacketItemName = '#item_5_title_link > .inventory_item_name'
+    onesieItemName = '#item_2_title_link > .inventory_item_name'
+    redShirtItemName = '#item_3_title_link > .inventory_item_name'
+
 
 }
 export default Index

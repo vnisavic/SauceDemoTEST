@@ -37,3 +37,9 @@ Cypress.Commands.add('isVisible',(element)=>{
      element.should('be.visible').and('exist')
      
 })
+
+Cypress.Commands.add('textProof', (element, text)=>{
+
+     cy.get(element).should('have.text', text)
+
+})
