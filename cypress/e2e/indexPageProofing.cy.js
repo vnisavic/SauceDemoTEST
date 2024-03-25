@@ -1,5 +1,6 @@
 import Index from "../pageObjectModels/indexPOM"
 import indexPageText from "../fixtures/indexPageItemNames.json"
+import itemPrice from "../fixtures/itemPrices.json"
 
 var index = new Index()
 
@@ -23,6 +24,13 @@ describe('Index Page text proofing', ()=>{
 
         // cy.proofTextForMultipleElems(index.allElementNames, indexPageText, indexPageText.elName) tried to make a function for this - failed, will try again later
             
+    })
+
+    it('Are item prices correct', ()=>{
+       
+        cy.get('.inventory_item_price').each((item, index, list)=>{
+            cy.wrap(item).should('have.text', itemPrice[index].price)
+        })
     })
          
 })
