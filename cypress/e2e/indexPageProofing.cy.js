@@ -1,6 +1,8 @@
 import Index from "../pageObjectModels/indexPOM"
 import indexPageText from "../fixtures/indexPageItemNames.json"
 import itemPrice from "../fixtures/itemPrices.json"
+import itemDesc from "../fixtures/itemDescriptions.json"
+import imagesSrc from "../fixtures/itemImageSRC.json"
 
 var index = new Index()
 
@@ -30,6 +32,28 @@ describe('Index Page text proofing', ()=>{
        
         cy.get('.inventory_item_price').each((item, index, list)=>{
             cy.wrap(item).should('have.text', itemPrice[index].price)
+        })
+    })
+
+    it('Are item descriptions correct', ()=>{
+
+        cy.get('.inventory_item_desc').each((item, index, list)=>{
+            cy.wrap(item).should('have.text', itemDesc[index].desc)
+        })
+    })
+
+    it('Are item images correct (does each img have a correct src property', ()=>{
+
+        cy.get("img[class='inventory_item_img']").each((item, index, list)=>{
+            cy.wrap(item).should('have.attr', 'src').should('eq', imagesSrc[index].src)
+        })
+    })
+
+    it('Checking if add to cart buttons have the correct text', ()=>{
+
+        cy.get('.btn_primary').each((btn, index, list)=>{
+
+            cy.wrap(btn).should('have.text', 'ADD TO CART')
         })
     })
          
