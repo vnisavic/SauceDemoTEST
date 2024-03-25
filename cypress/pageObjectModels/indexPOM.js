@@ -56,6 +56,8 @@ class Index{
     onesieItemName = '#item_2_title_link > .inventory_item_name'
     redShirtItemName = '#item_3_title_link > .inventory_item_name'
 
+    allElementNames = '.inventory_item_name'
+
 
 }
 export default Index

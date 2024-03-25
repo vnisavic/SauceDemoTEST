@@ -43,3 +43,10 @@ Cypress.Commands.add('textProof', (element, text)=>{
      cy.get(element).should('have.text', text)
 
 })
+
+Cypress.Commands.add('proofTextForMultipleElems',(element, fixtureName, fixtureProperty)=>{
+
+     cy.get(element).each((el,index,list)=>{
+          cy.wrap(el).should('have.text', fixtureName[index].fixProperty)
+     })
+} )

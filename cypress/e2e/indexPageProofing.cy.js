@@ -1,4 +1,6 @@
 import Index from "../pageObjectModels/indexPOM"
+import indexPageText from "../fixtures/indexPageItemNames.json"
+
 var index = new Index()
 
 describe('Index Page text proofing', ()=>{
@@ -11,58 +13,16 @@ describe('Index Page text proofing', ()=>{
         cy.logIn(url, user,pass)
     })
 
-    it('Is backpack name correct', ()=>{
+    it('Are item names correct', ()=>{
 
-        cy.fixture('indexPageText.json').then((itemName)=>{
+            cy.get('.inventory_item_name').each((item, index, list)=>{
 
-            cy.textProof(index.backPackItemName, itemName.backpackName)
+            cy.wrap(item).should('have.text', indexPageText[index].elName)
 
-        })
-    })
+         })
 
-    it('Is bike light name correct', ()=>{
-
-        cy.fixture('indexPageText.json').then((itemName)=>{
-
-            cy.textProof(index.bikeLightItemName, itemName.bikeLightName)
+        // cy.proofTextForMultipleElems(index.allElementNames, indexPageText, indexPageText.elName) tried to make a function for this - failed, will try again later
             
-        })
     })
-
-    it('Is tshirt name correct', ()=>{
-
-        cy.fixture('indexPageText.json').then((itemName)=>{
-
-            cy.textProof(index.tShirtItemName, itemName.tshirtName)
-            
-        })
-    })
-
-    it('Is jacket name correct', ()=>{
-
-        cy.fixture('indexPageText.json').then((itemName)=>{
-
-            cy.textProof(index.jacketItemName, itemName.jacketName)
-            
-        })
-    })
-
-    it('Is onesie name correct', ()=>{
-
-        cy.fixture('indexPageText.json').then((itemName)=>{
-
-            cy.textProof(index.onesieItemName, itemName.onesieName)
-            
-        })
-    })
-
-    it('Is red shirt name correct', ()=>{
-
-        cy.fixture('indexPageText.json').then((itemName)=>{
-
-            cy.textProof(index.redShirtItemName, itemName.redShirtName)
-            
-        })
-    })
-    
+         
 })
