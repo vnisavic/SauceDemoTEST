@@ -33,6 +33,7 @@ describe('Index Page text proofing', ()=>{
         cy.get('.inventory_item_price').each((item, index, list)=>{
             cy.wrap(item).should('have.text', itemPrice[index].price)
         })
+
     })
 
     it('Are item descriptions correct', ()=>{
